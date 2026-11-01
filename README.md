@@ -1,14 +1,29 @@
 # Translation Aid
 Translation Aid is a Google Chrome browser extension that displays translation services in a sidebar. It automatically translates text selected on web pages and shows the translation in the sidebar. It currently supports two translation services: Argos Translate and Google Translate.
-
+![Translation Aid](images/TranslationAid.png)
 ## How does it work? (in a nutshell)
 Translation Aid sends the text to be translated to a Python-based script via the Chrome Native API; the script then returns the translated content to the browser extension, which displays it. The script utilizes the [argostranslate](https://pypi.org/project/argostranslate/) and [googletrans](https://pypi.org/project/googletrans/) Python modules to perform the translation. In the case of Google Translate, the text is sent to Google’s servers, and the translation is received back from them; conversely, Argos Translate is installed on the local machine, meaning it performs translations locally. Consequently, the speed of translation depends on the computing power of the local machine.
 
 ## Installing a Browser Extension
-# 1. Opening the extensions tab
-Open the Chrome home screen, then click on the following (as shown in the image below):
+### 1. Download Translation Aid
+Download Translation Aid using the `git clone` command:
+```
+git clone https://github.com/ihlet/TranslationAid.git
+```
+or click the "Code" button on the main page of ihlet/TranslationAid (as shown in the image below), then select "Download ZIP".
+![Download Translation Aid](images/downloadTA.png)
+### 2. Opening the extensions tab
+Open the Chrome home screen, then click on the following:
 ```
 menu (top right corner) -> Extension -> Manage Extensions
 ```
 ![Opening the extensions tab](images/installExtension1.png)
-
+### 3. Enabling Developer mode
+Turn on the "Developer mode" switch in the top-right corner!
+![Enabling Developer mode](images/installExtension2.png)
+### 4. Loading the extension
+Click the "Load unpacked" button in the top-left corner!
+![Loading the extension](images/installExtension3.png)
+### 5. Loading the Translation Aid
+Locate the downloaded Translation Aid folder (if you downloaded it as a ZIP file, extract it first), then select the "src" folder inside it!
+![Loading the Translation Aid](images/installExtension4.png)
