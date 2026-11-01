@@ -1,0 +1,45 @@
+{
+  "name": "Translation Aid",
+  "description": "",
+  "version": "1.0",
+  "manifest_version": 3,
+  "default_locale": "en",
+  "permissions": [
+    "sidePanel",
+    "activeTab",
+    "scripting",
+    "storage",
+    "nativeMessaging"
+  ],
+
+  "icons": {
+    "16": "icons/translate-16px.png",
+    "32": "icons/translate-32px.png",
+    "48": "icons/translate-48px.png",
+    "128": "icons/translate-128px.png"
+  },
+  "side_panel": {
+    "default_path": "main.html",
+    "default_icon": "images/translate.png"
+  },
+  "host_permissions": [
+    "https://szotar.sztaki.hu/",
+    "https://www.szotar.net/*",
+    "https://translate.google.com/*",
+    "https://fonts.gstatic.com/*",
+    "https://*.google.com/*",
+    "https://lh3.googleusercontent.com/*",
+    "https://www.bing.com/translator"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

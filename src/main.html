@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- 
+ * This file is part of Translation Aid
+ *
+ * Copyright (C) 2026 - NAGY, Gábor
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU Library General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Library General Public License for more details.
+ *
+ *  You should have received a copy of the GNU Library General Public License
+ *  along with this program. If not, see <https://www.gnu.org/licenses/>.
+-->
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      :root{
+        --cPad: 4px;
+      }
+      *{
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body{
+        font-size: 24px;
+        height: 98vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .common{
+        border: 1px solid grey;
+        border-radius: 20px;
+        padding-top: var(--cPad);
+        padding-bottom: var(--cPad);
+        background-color: white;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        font-size: 16px;
+        text-align: center;
+      }
+      details summary{
+        list-style:none;
+        padding: var(--cPad);
+        position: relative;
+      }
+      .summary-label,
+      .summary-label *{
+        text-align: center;
+        vertical-align: middle;
+      }
+      .summary-label{
+        margin-left: 24px;
+        margin-right: 24px;
+      }
+      details[open] .summary-label{
+        border-bottom: 1px solid grey;
+        padding-bottom: var(--cPad);
+      }
+      details[open]::details-content{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+      details .content div{
+        margin-left: 12px;
+        margin-top: 10px;
+        margin-bottom: 4px;
+      }
+      details[open] > div.content > div:first-child{
+        margin-top: 8px;
+      }
+
+      details[open] .summary-arrow{
+        rotate: 225deg;
+      }
+      .summary-arrow{
+        position: absolute;
+        right:12px;
+        top: 5px;
+        width: 0;
+        height: 0;
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        rotate: 45deg;
+      }
+
+      #font-size-setting{
+        text-align: center;
+        font-size: 14px;
+      }
+
+
+      #translator{
+        padding: 0px;
+        margin: 0px;
+        outline: 0px;
+      }
+
+      #trCont{
+        display: grid;
+        grid-template-columns: 1fr 40px;
+        grid-template-rows: 1fr 1fr;
+        margin: 0;
+      }
+
+      #trCont > *{
+        vertical-align: middle;
+        text-align: center;
+        align-content: center;
+        margin: 4px 0 4px 0;
+      }
+
+      #srcLang{
+        grid-column: 1;
+        grid-row: 1;
+        margin-right: 2px;
+        margin-bottom: 4px;
+      }
+
+      #trgLang{
+        grid-column: 1;
+        grid-row: 2;
+        margin-right: 2px;
+      }
+      #srcLang[error],
+      #trgLang[error]{
+        border: 3px solid red;
+      }
+
+      #swapLang{
+        grid-column: 2;
+        grid-row: 1 / 3;
+        margin-left: 2px;
+        cursor: pointer;
+      }
+
+      #swapLang:active{
+        background-color: lightgray;
+      }
+
+      .btnCont{
+        display: flex;
+        flex-direction: row;
+        margin: 4px 0 4px 0;
+      }
+
+      .btnCont > *{
+        height: 100%;
+        margin: 0;
+        height: 32px;
+        align-content: center;
+        color: white;
+        background-color: cornflowerblue;
+        cursor: pointer;
+      }
+
+      .btnCont :active{
+        background-color: rgb(80, 115, 180);
+      }
+
+      #originBtn{
+        flex: 1;
+      }
+
+      #trtBtn{
+        margin-left: 3px;
+        margin-right: 3px;
+        flex: 1;
+      }
+
+      #delBtn{
+        flex: 0 0 32px;
+        border-radius: 10px;
+        width: 32px;
+        padding: 0;
+        background-color: white;
+      }
+
+      #delBtn:active,
+      #delBtn:active *{
+        background-color: lightgray;
+      }
+
+      #translator{
+        width: 100%;
+        padding: 0;
+        outline: 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #textBox{
+        resize: none;
+        margin: 4px 0 4px 0;
+        flex: 1;
+        text-align: justify;
+        padding: 8px;
+      }
+
+      #textBox::placeholder{
+        position: relative;
+        top: calc(50% - 18px);
+        text-align:center;
+        font-size: 18px;
+      }
+      #directory{
+        margin-top: 4px;
+        padding: 0;
+        outline: 0;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      #directory *{
+        flex: 1;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <details id="settings" class="common dropDown">
+      <summary>
+        <div class="summary-label"><img height="24px" src="icons/setting.svg"><span id="setBtn"></span></div>
+        <div class="summary-arrow"></div>
+      </summary>
+      <div class="content">
+        <div><label id="satLabel"><input id="sat" type="checkbox"></label><div>
+        <div><label><span id="txbs"></span> <input id="font-size-setting" type="number" min="10" max="48" with="25px">px</label></div>
+      </div>
+    </details>
+    <select id="mode" class="common">
+    </select>
+    <div id="translator">
+      <div id="trCont">
+        <select id="srcLang" class="common">
+        </select>
+        <select id="trgLang" class="common"></select>
+        <div id="swapLang" class="common"><img src="icons/swap-32px.png" /></div>
+      </div>
+      <div class="btnCont">
+        <div id="originBtn" class="common" style="flex: 1;"></div>
+        <div id="trtBtn" class="common" style="flex: 1;"></div>
+        <div id="delBtn" class="common"><img src="icons/delete-32px.png" height="24px"></div>
+      </div>
+      </select>
+      <textarea id="textBox" class="common" placeholder=""></textarea>
+    </div>
+    <div id="directory" style="display:none">
+    </div>
+  </body>
+  <script src="script.js" type="module"></script>
+</html>
