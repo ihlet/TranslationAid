@@ -7,6 +7,6 @@ Translation Aid sends the text to be translated to a Python-based script via the
 ## Installing a Browser Extension
 # 1. Opening the extensions tab
 Open the Chrome home screen, then click on the following (as shown in the image below):
-`menu (top right corner) -> Extension -> Manage Extensions`
+```menu (top right corner) -> Extension -> Manage Extensions```
 ![Opening the extensions tab](images/installExtension1.png)
 
