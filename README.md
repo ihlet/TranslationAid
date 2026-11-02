@@ -38,5 +38,19 @@ Turn on the "Developer mode" switch in the top-right corner!
 ### 4. Loading the extension
 Click the "Load unpacked" button in the top-left corner, then locate the Translation Aid folder you downloaded in step 1 and select the "src" folder inside it!
 ![Loading the extension](images/installExtension4.png)
-## Installing 
+## Installing a native script
+For TranslationAid to be able to have the desired text translated, the script must be present for the browser's native API.
+### Installation on GNU/Linux
+> [!NOTE]
+> If you are using an Ubuntu-based distribution (e.g., Linux Mint), you must install the `python3-venv` package before launching the installer.
+> ```
+> sudo apt install python3-venv
+> ```
+Open a terminal and enter the following command:
+```
+cd <path/to/TranslationAid-folder/src>
+chmod +x install.py
+./install.py
+```
+### Installation on Windows
 
