@@ -14,8 +14,7 @@ Translation Aid sends the text to be translated to a Python-based script via the
 > [!WARNING]
 > Download the Translation Aid folder to a path—or move the downloaded folder to a location—that contains only ASCII characters (i.e., only the letters and characters of the English alphabet).
 
- For example:
- 
+ For example: 
  :x: C:\Users\Ödön\...
  
  :white_check_mark: C:\Users\Odon\...
