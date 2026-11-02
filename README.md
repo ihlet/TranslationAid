@@ -40,7 +40,7 @@ Click the "Load unpacked" button in the top-left corner, then locate the Transla
 ![Loading the extension](images/installExtension4.png)
 ## Installing a native script
 For TranslationAid to be able to have the desired text translated, the script must be present for the browser's native API.
-### Installation on GNU/Linux
+### Step 1: Installation on GNU/Linux
 > [!IMPORTANT]
 > A Python interpreter version 3.10 or later is required to install the script.
 
@@ -55,5 +55,11 @@ cd <path/to/TranslationAid-folder/src>
 chmod +x install.py
 ./install.py
 ```
-### Installation on Windows
+### Step 1: Installation on Windows
+To install and run the script, a Python interpreter (version 3.10 or later) is required. You can download the interpreter from [https://www.python.org/](https://www.python.org/).
+> [!NOTE]
+> Please install only one version! Having two or more versions of the interpreter installed can interfere with the operation of TranslationAid’s native script.
+
+> [!IMPORTANT]
+> 
 
