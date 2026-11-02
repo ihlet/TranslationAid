@@ -75,7 +75,7 @@ The installer will ask for the extension ID. You can find it on the extensions p
 ![Extension ID on terminal](images/installNative.png)
 
 ## Uninstalling a native script
-# Uninstallation on GNU/Linux
+### Uninstallation on GNU/Linux
 Open a terminal and enter the following commands:
 ```
 cd <path/to/TranslationAid-folder/src>
@@ -83,7 +83,7 @@ cd <path/to/TranslationAid-folder/src>
 y
 ```
 
-# Uninstallation on Windows
+### Uninstallation on Windows
 Navigate to the Translation Aid folder and double-click the uninstall.bat file located in the "src" folder!
 If you really want to uninstall, type "y" or "yes" and press Enter!
 
