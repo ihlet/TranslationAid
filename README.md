@@ -67,5 +67,11 @@ To install and run the script, a Python interpreter (version 3.10 or later) is r
 > 
 >![Python installer](images/pyinstaller.png)
 
+After installing Python, navigate to the Translation Aid folder and double-click the install.bat file located in the "src" folder!
+### Step 2: Specifying the extension identifier
+The installer will ask for the extension ID. You can find it on the extensions page in the Chrome browser. (In the image below, the part you need to copy is highlighted in blue.)
+![Extension ID on browser](images/installExtension5.png)
+![Extension ID on terminal](images/installNative.png)
+
 
 
