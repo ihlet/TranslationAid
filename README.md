@@ -6,6 +6,7 @@ Translation Aid is a Google Chrome browser extension that displays translation s
 - [How does it work? (in a nutshell)](#how-does-it-work-in-a-nutshell)
 - [Installing a Browser Extension](#Installing-a-Browser-Extension)
 - [Installing a native script](#Installing-a-native-script)
+- [Uninstalling a native script](Uninstalling-a-native-script)
 
 ## How does it work? (in a nutshell)
 Translation Aid sends the text to be translated to a Python-based script via the [Chrome Native API](https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging); the script then returns the translated content to the browser extension, which displays it. The script utilizes the [argostranslate](https://pypi.org/project/argostranslate/) and [googletrans](https://pypi.org/project/googletrans/) Python modules to perform the translation. In the case of Google Translate, the text is sent to Google’s servers, and the translation is received back from them; conversely, Argos Translate is installed on the local machine, meaning it performs translations locally. Consequently, the speed of translation depends on the computing power of the local machine.
@@ -72,6 +73,19 @@ After installing Python, navigate to the Translation Aid folder and double-click
 The installer will ask for the extension ID. You can find it on the extensions page in the Chrome browser. (In the image below, the part you need to copy is highlighted in blue.)
 ![Extension ID on browser](images/installExtension5.png)
 ![Extension ID on terminal](images/installNative.png)
+
+## Uninstalling a native script
+# Uninstallation on GNU/Linux
+Open a terminal and enter the following commands:
+```
+cd <path/to/TranslationAid-folder/src>
+./uninstall.py
+y
+```
+
+# Uninstallation on Windows
+Navigate to the Translation Aid folder and double-click the uninstall.bat file located in the "src" folder!
+If you really want to uninstall, type "y" or "yes" and press Enter!
 
 
 
