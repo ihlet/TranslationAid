@@ -64,6 +64,8 @@ To install and run the script, a Python interpreter (version 3.10 or later) is r
 > [!IMPORTANT]
 > Check the "Add python.exe to PATH" option in the Python installer!
 > (It is marked with a red arrow in the image below.)
-![Python installer](images/pyinstaller.png)
+> 
+>![Python installer](images/pyinstaller.png)
+
 
 
