@@ -5,6 +5,7 @@ Translation Aid is a Google Chrome browser extension that displays translation s
 ## Contents
 - [How does it work? (in a nutshell)](#how-does-it-work-in-a-nutshell)
 - [Installing a Browser Extension](#Installing-a-Browser-Extension)
+- [Installing a native script](#Installing-a-native-script)
 
 ## How does it work? (in a nutshell)
 Translation Aid sends the text to be translated to a Python-based script via the [Chrome Native API](https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging); the script then returns the translated content to the browser extension, which displays it. The script utilizes the [argostranslate](https://pypi.org/project/argostranslate/) and [googletrans](https://pypi.org/project/googletrans/) Python modules to perform the translation. In the case of Google Translate, the text is sent to Google’s servers, and the translation is received back from them; conversely, Argos Translate is installed on the local machine, meaning it performs translations locally. Consequently, the speed of translation depends on the computing power of the local machine.
@@ -61,5 +62,8 @@ To install and run the script, a Python interpreter (version 3.10 or later) is r
 > Please install only one version! Having two or more versions of the interpreter installed can interfere with the operation of TranslationAid’s native script.
 
 > [!IMPORTANT]
-> 
+> Check the "Add python.exe to PATH" option in the Python installer!
+> (It is marked with a red arrow in the image below.)
+![Python installer](images/pyinstaller.png)
+
 
