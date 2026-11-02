@@ -16,9 +16,9 @@ Translation Aid sends the text to be translated to a Python-based script via the
 >
 > For example:
 >
-> :x: C:\Users\\Ödön\\...
+> :x: C:\\Users\\Ödön\\...\\TranslationAid
 >
-> :white_check_mark: C:\Users\Odon\\...
+> :white_check_mark: C:\\Users\Odon\\...\\TranslationAid
  
 Download Translation Aid using the `git clone` command:
 ```
