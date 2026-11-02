@@ -41,6 +41,9 @@ Click the "Load unpacked" button in the top-left corner, then locate the Transla
 ## Installing a native script
 For TranslationAid to be able to have the desired text translated, the script must be present for the browser's native API.
 ### Installation on GNU/Linux
+> [!IMPORTANT]
+> A Python interpreter version 3.10 or later is required to install the script.
+
 > [!NOTE]
 > If you are using an Ubuntu-based distribution (e.g., Linux Mint), you must install the `python3-venv` package before launching the installer.
 > ```
