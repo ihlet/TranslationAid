@@ -64,11 +64,11 @@ if __name__=="__main__":
 			print(error)
 		if(delArgos):
 			try:
-				rmDirRecursive(os.path.join(os.environ.get('HOME'),"/home/gabor/.local/share/argos-translate"))
+				rmDirRecursive(os.path.join(os.environ.get('HOME'),".local/share/argos-translate"))
 			except Exception as error:
 				print(error)
 			try:
-				rmDirRecursive(os.path.join(os.environ.get('HOME'),"/home/gabor/.local/cache/argos-translate"))
+				rmDirRecursive(os.path.join(os.environ.get('HOME'),".local/cache/argos-translate"))
 			except Exception as error:
 				print(error)
 		print("\nUninstallation complete!\n")
